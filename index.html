@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERNETIX // Human 2.0 Upgrade Protocol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio Control Toggle -->
+    <div class="audio-controller">
+        <button id="audioToggle" class="cyber-btn-small" aria-label="Toggle Audio HUD">
+            <span class="audio-icon">🔊</span> <span id="audioStatus">AUDIO: OFF</span>
+        </button>
+    </div>
+
+    <!-- Scanline & HUD Overlay Effects -->
+    <div class="scanline"></div>
+    <div class="hud-grid-overlay"></div>
+    
+    <!-- Header / Navigation -->
+    <header class="cyber-header">
+        <div class="logo-container">
+            <div class="logo-glitch" data-text="CYBERNETIX">CYBERNETIX</div>
+            <span class="sub-logo">// SYS.VER.4.0.9</span>
+        </div>
+        <nav class="cyber-nav">
+            <a href="#hero" class="nav-link">HOME</a>
+            <a href="#configurator" class="nav-link">CONFIGURATOR</a>
+            <a href="#matrix" class="nav-link">MODULES</a>
+            <a href="#telemetry" class="nav-link">TELEMETRY</a>
+            <a href="#pricing" class="nav-link">UPGRADES</a>
+            <a href="#terminal" class="nav-link">SECURE LINK</a>
+        </nav>
+        <div class="header-status">
+            <span class="status-dot"></span>
+            <span class="status-text">NEURAL LINK: ONLINE</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="badge-tag">STATUS: PROTOCOL READY</div>
+            <h1 class="hero-title">TRANSCEND <span class="highlight">BIOLOGY</span>.</h1>
+            <p class="hero-subtitle">
+                Welcome to the next evolution of human capability. Advanced cybernetic augmentation, neural processing cores, and titanium-alloy chassis integration. Upgrade your reality today.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#configurator" class="cyber-btn primary">
+                    <span>INITIALIZE CONFIGURATOR</span>
+                    <div class="btn-glitch-border"></div>
+                </a>
+                <a href="#matrix" class="cyber-btn secondary">
+                    <span>EXPLORE SPECS</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-hud-preview">
+            <div class="hud-box">
+                <div class="hud-header">SYS_DIAGNOSTICS</div>
+                <div class="hud-body">
+                    <div class="metric-row"><span>SYNC RATE:</span> <span class="val cyan">99.8%</span></div>
+                    <div class="metric-row"><span>CORE TEMP:</span> <span class="val green">36.4°C</span></div>
+                    <div class="metric-row"><span>LATENCY:</span> <span class="val cyan">0.12ms</span></div>
+                    <div class="metric-row"><span>ARMOR INTEGRITY:</span> <span class="val green">OPTIMAL</span></div>
+                </div>
+                <div class="hud-footer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybernetic Configurator Section -->
+    <section id="configurator" class="configurator-section">
+        <div class="section-header">
+            <h2>// 01. CYBERNETIC CONFIGURATOR</h2>
+            <p>Select your integration tier and customize neural, ocular, and skeletal chassis modules.</p>
+        </div>
+        
+        <div class="configurator-container">
+            <!-- Schematic / Interactive Preview -->
+            <div class="config-visual">
+                <div class="cyborg-silhouette">
+                    <div class="node-marker node-neural" data-node="neural"><span>NEURAL CORE</span></div>
+                    <div class="node-marker node-ocular" data-node="ocular"><span>OCULAR SUITE</span></div>
+                    <div class="node-marker node-chassis" data-node="chassis"><span>TITANIUM CHASSIS</span></div>
+                    <div class="node-marker node-power" data-node="power"><span>FUSION REACTOR</span></div>
+                    <div class="hologram-scanner-beam"></div>
+                </div>
+            </div>
+
+            <!-- Options Panel -->
+            <div class="config-controls">
+                <div class="control-group">
+                    <h3>1. NEURAL PROCESSOR</h3>
+                    <div class="option-grid">
+                        <button class="opt-btn active" data-category="neural" data-name="Synapse-X Standard" data-cost="12400" data-sync="94">Synapse-X Standard</data-cost>
+                        <button class="opt-btn" data-category="neural" data-name="Apex Cortex Pro" data-cost="28900" data-sync="99.4">Apex Cortex Pro</data-cost>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>2. OCULAR ARRAY</h3>
+                    <div class="option-grid">
+                        <button class="opt-btn active" data-category="ocular" data-name="Viper-Vision Mk.IV" data-cost="8500" data-sync="92">Viper-Vision Mk.IV</data-cost>
+                        <button class="opt-btn" data-category="ocular" data-name="Spectra-Thermal 360" data-cost="15200" data-sync="98.1">Spectra-Thermal 360</data-cost>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>3. SKELETAL CHASSIS</h3>
+                    <div class="option-grid">
+                        <button class="opt-btn active" data-category="chassis" data-name="Carbon-Fiber Weave" data-cost="19000" data-sync="95">Carbon-Fiber Weave</data-cost>
+                        <button class="opt-btn" data-category="chassis" data-name="Titanium-Graphene Exoskel" data-cost="34000" data-sync="99.9">Titanium-Graphene Exoskel</data-cost>
+                    </div>
+                </div>
+
+                <!-- Live Summary & Cost -->
+                <div class="config-summary">
+                    <div class="summary-stats">
+                        <div><span>EST. SYNC:</span> <strong id="summarySync">98.2%</strong></div>
+                        <div><span>TOTAL INVESTMENT:</span> <strong id="summaryCost" class="cyan">$39,900</strong></div>
+                    </div>
+                    <button class="cyber-btn primary full-width" id="deployConfigBtn">
+                        <span>DEPLOY SPECIFICATION</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybernetics Matrix (Features) -->
+    <section id="matrix" class="matrix-section">
+        <div class="section-header">
+            <h2>// 02. CYBERNETICS MATRIX</h2>
+            <p>Advanced augmentation specifications engineered for absolute peak performance.</p>
+        </div>
+
+        <div class="matrix-grid">
+            <div class="matrix-card" data-modal="neural">
+                <div class="card-icon">🧠</div>
+                <h3>NEURAL SYNCHRONIZATION</h3>
+                <p>Direct cortical interface bridging biological consciousness with quantum calculation nodes for instantaneous reflex response.</p>
+                <span class="card-link">ACCESS METRICS &rarr;</span>
+            </div>
+            <div class="matrix-card" data-modal="ocular">
+                <div class="card-icon">👁️</div>
+                <h3>ENHANCED OCULAR SUITE</h3>
+                <p>Multi-spectrum vision feeds including thermographic, ultraviolet, night-cycle amplification, and integrated HUD targeting reticles.</p>
+                <span class="card-link">ACCESS METRICS &rarr;</span>
+            </div>
+            <div class="matrix-card" data-modal="chassis">
+                <div class="card-icon">🦾</div>
+                <h3>EXOSKELETAL FRAMEWORK</h3>
+                <p>Grade-5 titanium-graphene alloy replacement structures delivering superhuman load tolerance and ballistic impact dissipation.</p>
+                <span class="card-link">ACCESS METRICS &rarr;</span>
+            </div>
+            <div class="matrix-card" data-modal="power">
+                <div class="card-icon">⚡</div>
+                <h3>MICRO-FUSION POWERCELL</h3>
+                <p>Sub-dermal sustained isotope generator providing 72 hours of uninterrupted high-output kinetic energy without external recharge.</p>
+                <span class="card-link">ACCESS METRICS &rarr;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telemetry HUD Dashboard -->
+    <section id="telemetry" class="telemetry-section">
+        <div class="section-header">
+            <h2>// 03. LIVE TELEMETRY HUD</h2>
+            <p>Real-time system diagnostics and biometric synchronization monitoring.</p>
+        </div>
+
+        <div class="telemetry-dashboard">
+            <div class="telemetry-panel waveform-panel">
+                <div class="panel-title">NEURAL IMPULSE / ECG SYNCHRONIZATION</div>
+                <canvas id="waveformCanvas"></canvas>
+            </div>
+            <div class="telemetry-panel logs-panel">
+                <div class="panel-title">SYSTEM EVENT LOGS</div>
+                <div class="terminal-logs" id="terminalLogs">
+                    <p>[SYS_INIT] Loading quantum kernel v4.0.9...</p>
+                    <p>[OK] Neural pathways verified (0.12ms latency)</p>
+                    <p>[OK] Ocular sensor suite calibrated across 6 spectra</p>
+                    <p>[INFO] Sub-dermal reactor output at 98.4% efficiency</p>
+                    <p>[SECURE] Firewall active. Zero anomaly detected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Specs Comparison Table -->
+    <section class="specs-section">
+        <div class="section-header">
+            <h2>// 04. PERFORMANCE COMPARISON</h2>
+            <p>Biological Baseline vs. Cybernetix Human 2.0 Specification.</p>
+        </div>
+
+        <div class="table-container">
+            <table class="cyber-table">
+                <thead>
+                    <tr>
+                        <th>METRIC PARAMETER</th>
+                        <th>HUMAN BASELINE</th>
+                        <th>CYBERNETIX HUMAN 2.0</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Neural Reaction Time</td>
+                        <td>150ms - 250ms</td>
+                        <td class="cyan">0.12ms (Instantaneous)</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum Deadlift</td>
+                        <td>~120 kg</td>
+                        <td class="cyan">1,250 kg (Titanium Actuators)</td>
+                    </tr>
+                    <tr>
+                        <td>Visual Spectrum</td>
+                        <td>400nm - 700nm</td>
+                        <td class="cyan">Full Spectrum (UV to IR + Thermal)</td>
+                    </tr>
+                    <tr>
+                        <td>Sustained Power Output</td>
+                        <td>16 Hours / Day</td>
+                        <td class="cyan">72 Hours per Micro-Fusion Cycle</td>
+                    </tr>
+                    <tr>
+                        <td>Resilience</td>
+                        <td>Standard Biological</td>
+                        <td class="cyan">Ballistic Grade-5 Alloy Weave</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pricing / Tiers Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="section-header">
+            <h2>// 05. UPGRADE TIERS</h2>
+            <p>Select your upgrade package. Flexible financing options available through Cybernetix Guild.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="tier-tag">TIER I</div>
+                <h3>AUGMENTED OPERATIVE</h3>
+                <div class="price">$19,900</div>
+                <p>Essential neural acceleration and ocular enhancement for heightened everyday efficiency.</p>
+                <ul class="tier-features">
+                    <li>✓ Synapse-X Standard Core</li>
+                    <li>✓ Viper-Vision Mk.IV Oculars</li>
+                    <li>✓ Standard Biometric Link</li>
+                    <li>✓ 2-Year Maintenance Warranty</li>
+                </ul>
+                <a href="#terminal" class="cyber-btn secondary full-width"><span>SELECT TIER I</span></a>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="tier-tag highlight">TIER II // POPULAR</div>
+                <h3>ALPHA CYBORG</h3>
+                <div class="price">$49,900</div>
+                <p>Complete full-body integration with carbon-fiber chassis and advanced tactical HUD suite.</p>
+                <ul class="tier-features">
+                    <li>✓ Apex Cortex Pro Neural Core</li>
+                    <li>✓ Spectra-Thermal 360 Oculars</li>
+                    <li>✓ Carbon-Fiber Weave Frame</li>
+                    <li>✓ Micro-Fusion Powercell</li>
+                    <li>✓ Lifetime Firmware Upgrades</li>
+                </ul>
+                <a href="#terminal" class="cyber-btn primary full-width"><span>SELECT TIER II</span></a>
+            </div>
+
+            <div class="pricing-card">
+                <div class="tier-tag">TIER III</div>
+                <h3>OMEGA APEX</h3>
+                <div class="price">$98,500</div>
+                <p>Unrestricted titanium-graphene exoskeleton and quantum-grade intelligence processing.</p>
+                <ul class="tier-features">
+                    <li>✓ Custom Neural Quantum Core</li>
+                    <li>✓ Omni-Spectral Tactical Suite</li>
+                    <li>✓ Titanium-Graphene Exoskeleton</li>
+                    <li>✓ Dual-Core Fusion Reactor</li>
+                    <li>✓ 24/7 Priority Neural Support</li>
+                </ul>
+                <a href="#terminal" class="cyber-btn secondary full-width"><span>SELECT TIER III</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Contact / Pre-Order Form -->
+    <section id="terminal" class="terminal-section">
+        <div class="section-header">
+            <h2>// 06. SECURE PRE-ORDER TERMINAL</h2>
+            <p>Transmit your biometric identification to schedule upgrade surgery.</p>
+        </div>
+
+        <div class="terminal-form-container">
+            <form id="cyberForm" class="cyber-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="agentName">// OPERATIVE IDENTIFIER (NAME)</label>
+                        <input type="text" id="agentName" placeholder="e.g. Alex Vance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agentEmail">// SECURE FREQUENCY (EMAIL)</label>
+                        <input type="email" id="agentEmail" placeholder="vance@network.io" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tierSelect">// SELECTED UPGRADE PACKAGE</label>
+                        <select id="tierSelect">
+                            <option value="Tier I">Tier I - Augmented Operative ($19,900)</option>
+                            <option value="Tier II" selected>Tier II - Alpha Cyborg ($49,900)</option>
+                            <option value="Tier III">Tier III - Omega Apex ($98,500)</option>
+                            <option value="Custom">Custom Schematic Configuration</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="surgeryLocation">// PREFERRED SURGICAL FACILITY</label>
+                        <select id="surgeryLocation">
+                            <option value="Neo-Tokyo">Neo-Tokyo Sector 7 Clinic</option>
+                            <option value="Berlin">Berlin Cybernetic Hub</option>
+                            <option value="New-SF">New San Francisco Core</option>
+                            <option value="Orbital">Orbital Station Alpha (Zero-G)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="encryptedNotes">// ENCRYPTED TRANSMISSION / NOTES</label>
+                    <textarea id="encryptedNotes" rows="4" placeholder="Enter any specific medical or tactical requirements..."></textarea>
+                </div>
+                <button type="submit" class="cyber-btn primary full-width">
+                    <span>TRANSMIT SURGICAL REQUEST</span>
+                </button>
+            </form>
+            <div id="formSuccessMessage" class="form-success hidden">
+                <div class="success-box">
+                    <h3>[TRANSMISSION SUCCESSFUL]</h3>
+                    <p>Your surgical upgrade request has been encrypted and routed to Cybernetix Command. An orbital liaison will contact your secure frequency within 4 hours.</p>
+                    <button class="cyber-btn secondary" id="resetFormBtn">TRANSMIT NEW REQUEST</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-glitch" data-text="CYBERNETIX">CYBERNETIX</div>
+                <p>Transcending human limitation through superior cybernetic engineering.</p>
+            </div>
+            <div class="footer-links">
+                <h4>NETWORKS</h4>
+                <a href="#hero">Neural Grid</a>
+                <a href="#matrix">Modules</a>
+                <a href="#telemetry">Diagnostics</a>
+                <a href="#pricing">Upgrades</a>
+            </div>
+            <div class="footer-legal">
+                <h4>SECURITY & PROTOCOLS</h4>
+                <a href="#">Neural Privacy Policy</a>
+                <a href="#">Surgical Terms of Integration</a>
+                <a href="#">Quantum Encryption Standard</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CYBERNETIX CORP. ALL RIGHTS RESERVED. // HUMAN 2.0 PROTOCOL.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Matrix Details -->
+    <div id="matrixModal" class="cyber-modal hidden">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3 id="modalTitle">MODULE SPECIFICATIONS</h3>
+            <div id="modalBody" class="modal-body-text">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="cyber-btn primary close-modal-btn">ACKNOWLEDGE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
